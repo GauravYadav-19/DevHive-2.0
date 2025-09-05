@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorials - DevHive</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/tutorials.css">
+    <link rel="stylesheet" href="../css/tutorial-page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -75,6 +75,13 @@
     <footer>
         <p>&copy; 2025 DevHive. All rights reserved.</p>
     </footer>
-    <script src="../js/tutorials.js"></script>
+<script src="../js/tutorials.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('section').forEach(function(sec) {
+      sec.classList.add('visible');
+    });
+  });
+</script>
 </body>
 </html>
