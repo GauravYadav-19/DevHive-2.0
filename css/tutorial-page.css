@@ -1,68 +1,223 @@
-.tutorial-layout {
-    display: flex;
+.tutorials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     padding: 4rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    background: radial-gradient(circle, rgba(2,56,95,0.3) 0%, rgba(3,2,2,0) 70%);
 }
 
+.tutorials-header {
+  display: flex;
+  justify-content: center;    /* Center horizontally */
+  align-items: center;        /* Center vertically */
+  text-align: center;
+  flex-direction: column;
+  background: linear-gradient(135deg,
+              rgba(255,181,71,0.08) 0%,
+              rgba(0,194,255,0.05) 100%);
+  padding: 4rem 2rem;
+  min-height: 40vh;
+}
+
+.tutorials-header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.tutorials-header p {
+  font-size: 1.1rem;
+  margin: 0.75rem 0 1.5rem;
+  color: rgba(255,255,255,0.85);
+}
+
+.language-card {
+    background: #0D0D0D;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 2rem 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.language-card img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+}
+
+.language-card h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.language-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 194, 255, 0.4); /* blue glow */
+    border-color: #00C2FF;
+}
+/* Container */
+.search-container {
+  position: relative;
+  width: min(500px, 90%);
+  margin: 1.5rem auto 0;
+}
+
+/* Input field */
+.search-container input {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1.25rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Search icon inside input */
+.search-container .search-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: var(--color-accent2);
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+/* Focus effects */
+.search-container input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 25px rgba(0, 194, 255, 0.3);
+}
+
+.lang-icon {
+  width: 64px;
+  height: 64px;
+  object-fit:contain;
+}
+
+/*cpp page css*/
+/* Layout container for page */
+.tutorial-layout {
+  display: flex;
+  /* Allows sidebar and main content to sit side by side */
+  align-items: flex-start; /* Ensures sticky can work */
+}
+
+/* Sidebar styling and sticky behavior */
 .sidebar {
-    flex: 0 0 250px;
-    background-color: var(--color-dark);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid var(--color-accent1);
+  position: sticky;
+  top: var(--header-height, 80px); /* Adjust based on your header */
+  align-self: flex-start; /* Required for sticky behavior in flex container  [oai_citation:0‡Stack Overflow](https://stackoverflow.com/questions/44446671/my-position-sticky-element-isnt-sticky-when-using-flexbox?utm_source=chatgpt.com) */
+  z-index: 10;
+  flex: 0 0 240px;
+  background-color: var(--color-dark);
+  padding: 2rem 1.5rem;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  max-height: calc(100vh - var(--header-height, 80px));
+  overflow-y: auto;
 }
 
+/* Sidebar header styling */
 .sidebar h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--color-accent1);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  color: var(--color-accent1);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* Sidebar navigation list styling */
 .sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.sidebar ul li a {
-    display: block;
-    padding: 0.75rem 1rem;
-    text-decoration: none;
-    color: var(--color-text);
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.sidebar li {
+  margin-bottom: 1rem;
 }
 
-.sidebar ul li a:hover {
-    background-color: var(--color-accent1);
-    color: var(--color-dark);
+.sidebar a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  display: block;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Active link & hover highlight */
+.sidebar li.active > a {
+  color: var(--color-dark);
+  background-color: var(--color-accent2);
+}
+.sidebar a:hover {
+  color: var(--color-dark);
+  background-color: var(--color-accent2);
 }
 
 .tutorial-content {
-    flex: 1;
+  flex: 1;
+  padding: 3rem 2rem;
+  max-width: 800px;
 }
 
 .tutorial-content section {
-    margin-bottom: 3rem;
+  opacity: 1;
+  margin-bottom: 3rem;
 }
 
-.tutorial-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--color-accent1);
+@media (max-width: 900px) {
+  .tutorial-layout {
+    flex-direction: column;
+  }
+.sidebar {
+  position: sticky;
+  top: var(--header-height);
+  height: calc(100vh - var(--header-height));
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+}
+.code-block {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0 2rem;
 }
 
-.tutorial-content p {
-    line-height: 1.6;
+.code-block pre {
+  margin: 0;
+  overflow-x: auto;
+  color: #c8c8c8;
+  font-family: Menlo, monospace;
 }
 
-.tutorial-content code {
-    background-color: var(--color-accent2);
-    padding: 0.3rem 0.6rem;
-    border-radius: 5px;
-    font-weight: bold;
-    box-shadow: 0 0 10px rgba(2, 56, 95, 0.5);
+.copy-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: var(--color-accent2);
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.copy-btn:hover {
+  opacity: 1;
 }

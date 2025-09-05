@@ -1,42 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C++ Tutorial - DevHive</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/tutorial-page.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C++ Tutorial - DevHive</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/tutorial-page.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/" class="logo">DevHive</a>
-            <ul>
-                <li><a href="/tutorials">Tutorials</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/playground">Playground</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="tutorial-layout">
-        <aside class="sidebar">
-            <h3>C++ Basics</h3>
-            <ul>
-                <li><a href="#introduction">Introduction</a></li>
-            </ul>
-        </aside>
-        <article class="tutorial-content">
-            <section id="introduction">
-                <h2>C++ Tutorial - Coming Soon!</h2>
-                <p>This tutorial is currently under construction. Please check back later!</p>
-            </section>
-        </article>
-    </main>
-    <footer>
-        <p>&copy; 2025 DevHive. All rights reserved.</p>
-    </footer>
+  <header>
+    <nav>
+      <a href="/" class="logo">DevHive</a>
+      <ul>
+        <li><a href="/tutorials">Tutorials</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/playground">Playground</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="tutorial-layout">
+    <aside class="sidebar">
+      <h3>C++ Basics</h3>
+      <ul>
+        <li class="active"><a href="#introduction">Introduction</a></li>
+        <li><a href="#syntax">Syntax & Structure</a></li>
+        <li><a href="#variables">Variables & Data Types</a></li>
+        <li><a href="#control">Control Flow</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#arrays">Arrays & Strings</a></li>
+        <li><a href="#pointers">Pointers & Memory</a></li>
+        <li><a href="#oop">OOP Concepts</a></li>
+        <li><a href="#stl">STL</a></li>
+        <li><a href="#exceptions">Exceptions & I/O</a></li>
+        <li><a href="#advanced">Advanced Topics</a></li>
+        <li><a href="#quiz">Quiz / Exercises</a></li>
+      </ul>
+    </aside>
+
+<article class="tutorial-content">
+
+<section id="introduction">
+  <h2>Introduction: Hello, World!</h2>
+  <p>
+    The classic first C++ program demonstrates basic structure, compilation, and output operations.
+    Understanding this example ensures your environment is set up correctly.
+  </p>
+  <div class="code-block">
+    <pre><code>
+// Hello World in C++
+#include <iostream>
+using namespace std;
+
+int main() {
+  cout << "Hello, World!" << endl;
+  return 0;
+}
+    </code></pre>
+    <button class="copy-btn">Copy</button>
+  </div>
+</section>
+
+<section id="syntax">
+  <h2>Syntax & Structure</h2>
+  <p>
+    C++ code is structured into files, typically ending in <code>.cpp</code>. Each program must define the <code>main()</code> function, which serves as the entry point when the program runs.
+  </p>
+  <div class="code-block">
+    <pre><code>
+// Basic C++ structure
+#include <iostream>
+
+int main() {
+  std::cout << "Hello DevHive!" << std::endl;
+  return 0;
+}
+    </code></pre>
+    <button class="copy-btn">Copy</button>
+  </div>
+</section>
+
+<section id="variables">
+  <h2>Variables & Data Types</h2>
+  <p>
+    Learn how to declare variables and use data types like <code>int</code>, <code>double</code>, <code>char</code>,
+    and <code>bool</code>. Here's how you get started:
+  </p>
+  <div class="code-block">
+    <pre><code>
+// Declaring variables in C++
+#include <iostream>
+using namespace std;
+
+int main() {
+  int age = 25;
+  double height = 5.9;
+  char grade = 'A';
+  bool isStudent = true;
+
+  cout << "Age: " << age << endl;
+  cout << "Height: " << height << endl;
+  cout << "Grade: " << grade << endl;
+  cout << "Student: " << (isStudent ? "Yes" : "No") << endl;
+  return 0;
+}
+    </code></pre>
+    <button class="copy-btn">Copy</button>
+  </div>
+</section>
+
+<section id="control">
+  <h2>Control Flow</h2>
+  <p>
+    Control the program’s path using conditional statements and loops.
+  </p>
+  <div class="code-block">
+    <pre><code>
+// if-else example
+int x = 5;
+if (x % 2 == 0) {
+  std::cout << "Even" << std::endl;
+} else {
+  std::cout << "Odd" << std::endl;
+}
+
+// loop example
+for (int i = 1; i <= 5; ++i) {
+  std::cout << i << " ";
+}
+// Output: 1 2 3 4 5
+    </code></pre>
+    <button class="copy-btn">Copy</button>
+  </div>
+</section>
+
+<section id="functions">
+  <h2>Functions</h2>
+  <p>
+    Functions let you segment your code into reusable units. You can pass parameters and return values.
+  </p>
+  <div class="code-block">
+    <pre><code>
+int add(int a, int b) {
+  return a + b;
+}
+
+int main() {
+  std::cout << "3 + 4 = " << add(3, 4) << std::endl;
+  return 0;
+}
+    </code></pre>
+    <button class="copy-btn">Copy</button>
+  </div>
+</section>
+
+<section id="arrays">
+  <h2>Arrays & Strings</h2>
+  <p>
+    Use arrays for fixed-size collections and <code>std::string</code> for convenient text.
+  </p>
+  <div class="code-block">
+    <pre><code>
+int numbers[5] = {1, 2, 3, 4, 5};
+std::string greeting = "Hello DevHive";
+
+std::cout << greeting << std::endl;
+    </code></pre>
+    <button class="copy-btn">Copy</button>
+  </div>
+</section>
+
+<section id="pointers">
+  <h2>Pointers & Memory</h2>
+  <p>
+    Pointers store memory addresses. Allocating with <code>new</code> and releasing with <code>delete</code> gives manual control over memory.
+  </p>
+  <div class="code-block">
+    <pre><code>
+int* ptr = new int(42);
+std::cout << *ptr << std::endl;
+delete ptr; // free the memory
+    </code></pre>
+    <button class="copy-btn">Copy</button>
+  </div>
+</section>
+
+<section id="oop">
+  <h2>Object-Oriented Programming</h2>
+  <p>
+    OOP adds structure through classes and objects, supporting encapsulation and reusability.
+  </p>
+  <div class="code-block">
+    <pre><code>
+class Student {
+public:
+  Student(std::string n, int a) : name(n), age(a) {}
+  void info() const {
+    std::cout << name << ", " << age << " years old" << std::endl;
+  }
+private:
+  std::string name;
+  int age;
+};
+
+int main() {
+  Student s("Dev", 3);
+  s.info();
+  return 0;
+}
+    </code></pre>
+    <button class="copy-btn">Copy</button>
+  </div>
+</section>
+
+<section id="stl">
+  <h2>Standard Library (STL)</h2>
+  <p>
+    Use <code>std::vector</code> for dynamic arrays and algorithms like <code>std::sort</code> for quick work.
+  </p>
+  <div class="code-block">
+    <pre><code>
+#include <vector>
+#include <algorithm>
+
+std::vector<int> v = {5, 3, 9, 1};
+std::sort(v.begin(), v.end());
+for (auto n : v) std::cout << n << " "; // 1 3 5 9
+    </code></pre>
+    <button class="copy-btn">Copy</button>
+  </div>
+</section>
+
+<section id="exceptions">
+  <h2>Exception Handling & File I/O</h2>
+  <p>
+    Handle errors cleanly with <code>try</code> / <code>catch</code>. Read/write files using <code>fstream</code>.
+  </p>
+  <div class="code-block">
+    <pre><code>
+#include <fstream>
+
+try {
+  std::ifstream file("data.txt");
+  if (!file) throw "Cannot open file!";
+  std::string line;
+  while (std::getline(file, line)) std::cout << line << std::endl;
+} catch (const char* msg) {
+  std::cerr << "Error: " << msg << std::endl;
+}
+    </code></pre>
+    <button class="copy-btn">Copy</button>
+  </div>
+</section>
+
+      <section id="quiz">
+        <h2>Quiz / Exercises</h2>
+        <p>Test your knowledge with practical exercises and questions...</p>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DevHive. All rights reserved.</p>
+  </footer>
+  <script>
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const code = btn.previousElementSibling.innerText;
+    navigator.clipboard.writeText(code).then(() => {
+      btn.innerText = 'Copied!';
+      setTimeout(() => btn.innerText = 'Copy', 1500);
+    });
+  });
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('main .tutorial-content section[id]');
+  const navLinks = document.querySelectorAll('.sidebar ul li');
+
+  const onScroll = () => {
+    let currentId = sections[0].id;
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - window.innerHeight / 2;
+      if (window.scrollY >= sectionTop) {
+        currentId = section.id;
+      }
+    });
+
+    navLinks.forEach(li => {
+      li.classList.toggle('active', li.querySelector(`a[href="#${currentId}"]`) !== null);
+    });
+  };
+
+  window.addEventListener('scroll', onScroll);
+  onScroll(); // initialize on load
+});
+</script>
 </body>
 </html>
