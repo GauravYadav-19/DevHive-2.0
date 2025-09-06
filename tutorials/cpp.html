@@ -253,10 +253,106 @@ try {
   </div>
 </section>
 
-      <section id="quiz">
-        <h2>Quiz / Exercises</h2>
-        <p>Test your knowledge with practical exercises and questions...</p>
-      </section>
+<section id="advanced">
+  <h2>Advanced Topics</h2>
+  <p>
+    Dive into powerful modern C++ features that elevate both performance and expressiveness:
+  </p>
+
+  <h3>Smart Pointers & RAII</h3>
+  <p>
+    Smart pointers such as <code>std::unique_ptr</code>, <code>std::shared_ptr</code>, and <code>std::weak_ptr</code>
+    manage dynamic memory using RAII (Resource Acquisition Is Initialization), preventing memory leaks and dangling pointers.
+    (<a href="https://www.geeksforgeeks.org/cpp/smart-pointers-cpp/" target="_blank" rel="noopener noreferrer">
+      GeeksforGeeks: Smart Pointers
+    </a>,
+    <a href="https://en.cppreference.com/w/cpp/memory" target="_blank" rel="noopener noreferrer">
+      cppreference: Memory Management
+    </a>)
+  </p>
+  <div class="code-block">
+    <pre><code>#include &lt;memory&gt;
+#include &lt;iostream&gt;
+
+struct Demo {
+  ~Demo() { std::cout << "Destroyed\n"; }
+};
+
+void example() {
+  auto ptr = std::make_unique&lt;Demo&gt;(); // Automatically deleted when out of scope
+}
+    </code></pre>
+    <button class="copy-btn">Copy</button>
+  </div>
+
+  <h3>Structured Bindings (C++17)</h3>
+  <p>
+    Structured bindings allow unpacking of pairs, tuples, or structs into named variables,
+    making code cleaner and more readable.
+    (<a href="https://en.cppreference.com/w/cpp/language/structured_binding" target="_blank" rel="noopener noreferrer">
+      cppreference: Structured Bindings
+    </a>,
+    <a href="https://www.geeksforgeeks.org/structured-binding-c/" target="_blank" rel="noopener noreferrer">
+      GeeksforGeeks: Structured Binding
+    </a>)
+  </p>
+
+  <h3>C++20 Features & Coroutines</h3>
+  <p>
+    C++20 introduces features like coroutines (for asynchronous routines), modules, concepts, and enhanced <code>constexpr</code>.
+    (<a href="https://en.cppreference.com/w/cpp/20" target="_blank" rel="noopener noreferrer">
+      cppreference: C++20
+    </a>)
+  </p>
+  <div class="code-block">
+    <pre><code>#include &lt;coroutine&gt;
+#include &lt;iostream&gt;
+#include &lt;optional&gt;
+
+template&lt;typename T&gt;
+struct Generator {
+  struct promise_type {
+    std::optional&lt;T&gt; current_value;
+    Generator get_return_object();
+    std::suspend_always initial_suspend() noexcept { return {}; }
+    std::suspend_always final_suspend() noexcept { return {}; }
+    std::suspend_always yield_value(T value) {
+      current_value = value;
+      return {};
+    }
+    void return_void() {}
+    void unhandled_exception() { std::terminate(); }
+  };
+
+  std::coroutine_handle&lt;promise_type&gt; handle;
+  ~Generator() { if (handle) handle.destroy(); }
+  std::optional&lt;T&gt; next() {
+    if (!handle.done()) {
+      handle.resume();
+      return handle.promise().current_value;
+    }
+    return std::nullopt;
+  }
+};
+
+Generator&lt;int&gt; generate() {
+  for (int i = 1; i <= 3; ++i) co_yield i;
+}
+
+int main() {
+  auto gen = generate();
+  while (auto val = gen.next()) std::cout &lt;&lt; *val &lt;&lt; std::endl;
+  return 0;
+}
+    </code></pre>
+    <button class="copy-btn">Copy</button>
+  </div>
+</section>
+
+<section id="quiz">
+    <h2>Quiz / Exercises</h2>
+    <p>Test your knowledge with practical exercises and questions...</p>
+</section>
     </article>
   </main>
 

@@ -1,42 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Tutorial - DevHive</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/tutorial-page.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Tutorial - DevHive</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/tutorial-page.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/" class="logo">DevHive</a>
-            <ul>
-                <li><a href="/tutorials">Tutorials</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/playground">Playground</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="tutorial-layout">
-        <aside class="sidebar">
-            <h3>Python Basics</h3>
-            <ul>
-                <li><a href="#introduction">Introduction</a></li>
-            </ul>
-        </aside>
-        <article class="tutorial-content">
-            <section id="introduction">
-                <h2>Python Tutorial - Coming Soon!</h2>
-                <p>This tutorial is currently under construction. Please check back later!</p>
-            </section>
-        </article>
-    </main>
-    <footer>
-        <p>&copy; 2025 DevHive. All rights reserved.</p>
-    </footer>
+  <header>
+    <nav>
+      <a href="/" class="logo">DevHive</a>
+      <ul>
+        <li><a href="/tutorials">Tutorials</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/playground">Playground</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="tutorial-layout">
+    <aside class="sidebar">
+      <h3>Python Basics</h3>
+      <ul>
+        <li class="active"><a href="#introduction">Introduction</a></li>
+        <li><a href="#syntax">Syntax & Structure</a></li>
+        <li><a href="#variables">Variables & Types</a></li>
+        <li><a href="#control">Control Flow</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#context">Context Managers & Decorators</a></li>
+        <li><a href="#advanced">Advanced Topics</a></li>
+      </ul>
+    </aside>
+
+    <article class="tutorial-content">
+      <section id="introduction">
+        <h2>Introduction</h2>
+        <p>
+          Python is a high-level, interpreted programming language that emphasizes readability with its clean syntax.
+          It's dynamically typed, multi-paradigm (supporting procedural, object-oriented, and functional styles), and highly extensible.  
+           [oai_citation:0‡Wikipedia](https://en.wikipedia.org/wiki/Python_%28programming_language%29?utm_source=chatgpt.com)
+        </p>
+      </section>
+
+      <section id="syntax">
+        <h2>Syntax & Structure</h2>
+        <p>
+          Python uses significant indentation to define blocks, instead of braces. A simple “Hello World” looks like this:
+        </p>
+        <div class="code-block">
+          <pre><code>print("Hello, DevHive!")</code></pre>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </section>
+
+      <section id="variables">
+        <h2>Variables & Types</h2>
+        <p>
+          Python variables are dynamically typed, meaning you can assign values without declaring types:
+        </p>
+        <div class="code-block">
+          <pre><code>x = 42
+name = "Alice"
+pi = 3.14159
+is_active = True</code></pre>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </section>
+
+      <section id="control">
+        <h2>Control Flow</h2>
+        <p>
+          Use <code>if</code>, <code>elif</code>, and <code>else</code> for branching; <code>for</code> and <code>while</code> loops for iteration:
+        </p>
+        <div class="code-block">
+          <pre><code>if x > 0:
+    print("Positive")
+else:
+    print("Zero or negative")
+
+for i in range(5):
+    print(i)</code></pre>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </section>
+
+      <section id="functions">
+        <h2>Functions</h2>
+        <p>
+          Define reusable code with <code>def</code>, and use <code>return</code> to bring back values:
+        </p>
+        <div class="code-block">
+          <pre><code>def add(a, b):
+    return a + b
+
+print(add(3, 4))  # Outputs: 7</code></pre>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </section>
+
+      <section id="collections">
+        <h2>Collections</h2>
+        <p>
+          Python includes powerful built-in types: lists, tuples, sets, and dictionaries—each with its own use cases:
+        </p>
+        <div class="code-block">
+          <pre><code>fruits = ["apple", "banana", "cherry"]
+numbers = (1, 2, 3)
+unique = {"a", "b", "c"}
+person = {"name": "Alice", "age": 30}
+
+print(fruits[0], numbers[1], "b" in unique, person["age"])</code></pre>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </section>
+
+      <section id="context">
+        <h2>Context Managers & Decorators</h2>
+        <p>
+          Use context managers with <code>with</code> to handle setup/cleanup automatically:
+           [oai_citation:1‡Real Python](https://realpython.com/python-with-statement/?utm_source=chatgpt.com)
+        </p>
+        <div class="code-block">
+          <pre><code>with open("hello.txt", "w") as file:
+    file.write("Hello, DevHive!")</code></pre>
+          <button class="copy-btn">Copy</button>
+        </div>
+        <p>
+          Decorators wrap functions to modify behavior cleanly:
+           [oai_citation:2‡Real Python](https://realpython.com/primer-on-python-decorators/?utm_source=chatgpt.com)
+        </p>
+        <div class="code-block">
+          <pre><code>def log(func):
+    def wrapper(*args, **kwargs):
+        print("Calling", func.__name__)
+        return func(*args, **kwargs)
+    return wrapper
+
+@log
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("DevHive")</code></pre>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </section>
+
+      <section id="advanced">
+        <h2>Advanced Topics</h2>
+        <p>
+          Take your Python knowledge further with advanced techniques:
+        </p>
+
+        <h3>List Comprehensions & Functional Tools</h3>
+        <p>
+          Use list comprehensions and functions like <code>map</code>, <code>filter</code>, and <code>reduce</code> for concise data handling:
+           [oai_citation:3‡GeeksforGeeks](https://www.geeksforgeeks.org/python/advanced-python-tutorials/?utm_source=chatgpt.com)
+        </p>
+        <div class="code-block">
+          <pre><code>squares = [x**2 for x in range(5)]
+evens = list(filter(lambda x: x%2==0, squares))
+print(evens)</code></pre>
+          <button class="copy-btn">Copy</button>
+        </div>
+
+        <h3>Generators & Iterators</h3>
+        <p>
+          Generators yield values lazily and save memory—great for large datasets:
+           [oai_citation:4‡Medium](https://medium.com/%40nonamedev/advanced-python-techniques-generators-decorators-and-context-managers-with-examples-50de096b9609?utm_source=chatgpt.com) [oai_citation:5‡GeeksforGeeks](https://www.geeksforgeeks.org/python/advanced-python-tutorials/?utm_source=chatgpt.com)
+        </p>
+        <div class="code-block">
+          <pre><code>def countdown(n):
+    while n > 0:
+        yield n
+        n -= 1
+
+for num in countdown(5):
+    print(num)</code></pre>
+          <button class="copy-btn">Copy</button>
+        </div>
+
+        <h3>Closures</h3>
+        <p>
+          Closures capture surrounding state even after the outer function has completed:
+           [oai_citation:6‡Real Python](https://realpython.com/python-closure/?utm_source=chatgpt.com)
+        </p>
+        <div class="code-block">
+          <pre><code>def multiplier(n):
+    def multiply(x):
+        return x * n
+    return multiply
+
+double = multiplier(2)
+print(double(5))  # Outputs: 10</code></pre>
+          <button class="copy-btn">Copy</button>
+        </div>
+
+        <h3>Metaprogramming</h3>
+        <p>
+          Leverage decorators and metaclasses to customize class behavior at definition-time:
+           [oai_citation:7‡Medium](https://naeemabdullah799.medium.com/advanced-python-topics-87c3723d2b21?utm_source=chatgpt.com)
+        </p>
+
+        <h3>Concurrency (asyncio, threading)</h3>
+        <p>
+          Manage concurrency with threading, asyncio, or multiprocessing for scalable applications:
+           [oai_citation:8‡Medium](https://naeemabdullah799.medium.com/advanced-python-topics-87c3723d2b21?utm_source=chatgpt.com) [oai_citation:9‡Reddit](https://www.reddit.com/r/learnpython/comments/1gdvajz/what_topicsconcepts_are_considered_to_be_advanced/?utm_source=chatgpt.com)
+        </p>
+        <div class="code-block">
+          <pre><code>import asyncio
+
+async def say_hi():
+    print("Hi")
+    await asyncio.sleep(1)
+    print("Done")
+
+asyncio.run(say_hi())</code></pre>
+          <button class="copy-btn">Copy</button>
+        </div>
+
+        <h3>Regex</h3>
+        <p>
+          Regular expressions help match, search, and manipulate text efficiently:
+           [oai_citation:10‡GeeksforGeeks](https://www.geeksforgeeks.org/python/advanced-python-tutorials/?utm_source=chatgpt.com)
+        </p>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DevHive. All rights reserved.</p>
+  </footer>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = Array.from(document.querySelectorAll('article.tutorial-content section[id]'));
+  const navLinks = Array.from(document.querySelectorAll('.sidebar ul li'));
+
+  if (!sections.length) return;
+
+  // IntersectionObserver options: trigger when section's center crosses viewport center
+  const observerOptions = {
+    root: null,
+    rootMargin: '-40% 0px -40% 0px', // 40% from top and bottom -> center zone
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.id;
+      const link = document.querySelector(`.sidebar a[href="#${id}"]`);
+      if (!link) return;
+
+      // When the section intersects the center zone, mark it active; remove from others
+      if (entry.isIntersecting) {
+        navLinks.forEach(li => li.classList.remove('active'));
+        link.parentElement.classList.add('active');
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(s => observer.observe(s));
+
+  // Optional: update active on load in case page opened mid-document
+  // Force check by scrolling a tiny amount (works cross-browser)
+  window.scrollBy(0, 0);
+});
+</script>
 </body>
 </html>

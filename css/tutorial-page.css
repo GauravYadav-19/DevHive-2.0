@@ -165,9 +165,24 @@
 }
 
 .tutorial-content {
-  flex: 1;
-  padding: 3rem 2rem;
-  max-width: 800px;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+
+.tutorial-content h2 {
+  font-size: 2.25rem;        /* Larger headings */
+  font-weight: 700;
+  color: #FFB547;            /* Orange accent to stand out */
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #00C2FF; /* Blue underline accent */
+  padding-bottom: 0.25rem;
+}
+
+.tutorial-content p {
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
 }
 
 .tutorial-content section {
@@ -197,27 +212,16 @@
 }
 
 .code-block pre {
-  margin: 0;
-  overflow-x: auto;
-  color: #c8c8c8;
-  font-family: Menlo, monospace;
+  font-size: 1rem;
 }
-
 .copy-btn {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  background: var(--color-accent2);
-  color: #fff;
-  border: none;
-  padding: 0.3rem 0.6rem;
-  font-size: 0.9rem;
-  border-radius: 4px;
-  cursor: pointer;
-  opacity: 0.8;
-  transition: opacity 0.2s;
+  font-size: 0.95rem;
 }
 
 .copy-btn:hover {
   opacity: 1;
+}
+
+.content-section {
+  min-height: 100vh;
 }
