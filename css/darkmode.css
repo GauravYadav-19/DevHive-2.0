@@ -1,0 +1,24 @@
+/* Dark/Light Mode styles for DevHive */
+body.light-mode {
+  background-color: #ffffff;
+  color: #113dc1;
+}
+
+body.light-mode header,
+body.light-mode footer {
+  background-color: #a4a28e;
+  border-color: #ccc;
+}
+
+.dark-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #ffb547;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 1000;
+}
